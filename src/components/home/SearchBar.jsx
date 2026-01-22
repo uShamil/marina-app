@@ -1,24 +1,19 @@
 export default function SearchBar() {
 	return (
-	  <div className="bg-white rounded-xl shadow-lg p-4 flex flex-col md:flex-row gap-4">
+	  <div className="bg-white rounded-2xl shadow-xl p-6 grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl">
 		<input
-		  type="text"
 		  placeholder="Location"
-		  className="border rounded-lg px-4 py-3 flex-1"
+		  className="border rounded-lg px-4 py-3"
 		/>
-  
 		<input
 		  type="date"
 		  className="border rounded-lg px-4 py-3"
 		/>
-  
 		<input
-		  type="number"
 		  placeholder="Boat length (m)"
-		  className="border rounded-lg px-4 py-3 w-full md:w-48"
+		  className="border rounded-lg px-4 py-3"
 		/>
-  
-		<button className="bg-teal-600 text-white px-6 py-3 rounded-lg font-medium">
+		<button className="bg-teal-600 text-white rounded-lg px-6 py-3 font-medium">
 		  Find Marina
 		</button>
 	  </div>
