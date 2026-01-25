@@ -1,16 +1,16 @@
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Marinas from "./pages/Marinas";
+import MarinaDetail from "./pages/MarinaDetail";
 
-
-function App() {
+export default function App() {
   return (
-    <>
-      <Header />
-      <Home />
-	  <Footer/>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/marinas" element={<Marinas />} />
+        <Route path="/marinas/:id" element={<MarinaDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
