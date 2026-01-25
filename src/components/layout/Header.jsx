@@ -12,8 +12,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`left-0 top-0 w-full z-50 transition-all duration-300 bg-white
-        ${isScrolled ? "fixed bg-white shadow-md" : "absolute backdrop-blur-sm "}`}
+       
         style={{ height: HEADER_HEIGHT }}
       >
         <div className="max-w-[1180px] mx-auto px-6 h-full flex items-center justify-between">
