@@ -5,7 +5,7 @@ import { supabase } from "../lib/supabase";
 import MarinaCard from "../components/marinas/MarinaCard";
 import SearchBar from "../components/home/SearchBar";
 import Footer from "../components/layout/Footer";
-
+import PageBanner from "../components/layout/PageBanner";
 export default function Marinas() {
   const [searchParams] = useSearchParams();
   const location = searchParams.get("location");
@@ -58,6 +58,11 @@ export default function Marinas() {
 
   return (
     <>
+      <PageBanner
+        title="Marinas"
+        subtitle="Discover available marinas around the world"
+        image="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1920&q=80"
+      />
       {/* Top search */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-6 py-6">
