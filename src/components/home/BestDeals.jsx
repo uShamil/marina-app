@@ -1,23 +1,41 @@
-const items = [1,2,3,4,5,6];
+import { useEffect, useState } from "react";
+import { supabase } from "../../lib/supabase";
+import MarinaCard from "../marinas/MarinaCard";
 
 export default function BestDeals() {
-  return (
-    <section className="max-w-7xl mx-auto px-6 py-20">
-      <h2 className="text-2xl font-bold mb-10">Best deal for you</h2>
+  const [marinas, setMarinas] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {items.map(i => (
-          <div key={i} className="bg-white rounded-xl shadow hover:shadow-lg transition">
-            <img
-              src="https://images.unsplash.com/photo-1544551763-46a013bb70d5"
-              className="h-48 w-full object-cover rounded-t-xl"
-            />
-            <div className="p-5">
-              <h3 className="font-semibold">Marina Name</h3>
-              <p className="text-sm text-gray-500 mt-1">From €120 / night</p>
-            </div>
+  useEffect(() => {
+    const fetchBestDeals = async () => {
+      const { data, error } = await supabase.from("marinas").select("id, name, price, image").order("price", { ascending: true }).limit(6);
+
+      if (error) {
+        console.error("BestDeals error:", error);
+      } else {
+        setMarinas(data);
+      }
+
+      setLoading(false);
+    };
+
+    fetchBestDeals();
+  }, []);
+
+  return (
+    <section className="py-[80px]">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <h2 className="text-[24px] font-semibold mb-[32px]">Best deal for you</h2>
+
+        {loading ? (
+          <p className="text-gray-500">Loading deals...</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[32px]">
+            {marinas.map((marina) => (
+              <MarinaCard key={marina.id} marina={marina} />
+            ))}
           </div>
-        ))}
+        )}
       </div>
     </section>
   );

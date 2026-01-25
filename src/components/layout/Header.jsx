@@ -2,25 +2,21 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/pelra_logo.png";
 
+const HEADER_HEIGHT = 80;
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <>
       <header
-        className={`left-0 w-full z-50 transition-all duration-300
-        ${isScrolled ? "fixed top-0 bg-white shadow-md" : "absolute top-0 backdrop-blur-sm bg-white/20"}`}
+        className={`left-0 top-0 w-full z-50 transition-all duration-300 bg-white
+        ${isScrolled ? "fixed bg-white shadow-md" : "absolute backdrop-blur-sm "}`}
+        style={{ height: HEADER_HEIGHT }}
       >
-        <div className="max-w-[1180px] mx-auto px-6 py-5 flex items-center justify-between">
+        <div className="max-w-[1180px] mx-auto px-6 h-full flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 font-semibold text-gray-800">
             <img src={logo} className={`object-contain transition-all duration-300 ${isScrolled ? "h-8" : "h-10"}`} />
@@ -48,8 +44,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Spacer (fixed header content jump olmasın diye) */}
-      {isScrolled && <div className="h-[80px]" />}
+
     </>
   );
 }
