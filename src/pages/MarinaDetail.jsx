@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 import PageBanner from "../components/layout/PageBanner";
 
-
 export default function MarinaDetail() {
   const { id } = useParams();
   const [marina, setMarina] = useState(null);
