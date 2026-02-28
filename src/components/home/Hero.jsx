@@ -1,4 +1,4 @@
-import Header from "../layout/Header";
+
 import SearchBar from "./SearchBar";
 import bannerImg from "../../assets/b1.jpg";
 export default function Hero() {
@@ -12,8 +12,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-white/10" />
 
       {/* Header */}
-      <Header />
-
+     
       {/* Content */}
       <div className="relative z-10 max-w-[1180px] mx-auto px-6 h-full">
         {/* Text */}

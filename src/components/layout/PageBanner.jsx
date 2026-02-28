@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 
 export default function PageBanner({ title, subtitle, image }) {
   return (
-    <div className="relative h-[220px] w-full">
+    <div className="relative h-[220px] w-full min-h-[450px]">
       {/* Background image */}
       <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
 

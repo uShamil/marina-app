@@ -7,14 +7,9 @@ const HEADER_HEIGHT = 80;
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
-
-
   return (
     <>
-      <header
-       
-        style={{ height: HEADER_HEIGHT }}
-      >
+      <header className="fixed top-0 left-0 w-full z-20 bg-white/55 py-5">
         <div className="max-w-[1180px] mx-auto px-6 h-full flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 font-semibold text-gray-800">
@@ -42,8 +37,6 @@ export default function Header() {
           </div>
         </div>
       </header>
-
-
     </>
   );
 }
