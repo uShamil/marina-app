@@ -16,10 +16,10 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route element={<Layout />}>
-            {/* Ana sayfa */}
-            <Route path="/" element={<Home />} />
+          {/* Root Application - Under Construction */}
+          <Route path="/" element={<UnderConstruction />} />
 
+          <Route element={<Layout />}>
             {/* Gerçek site */}
             <Route path="/home" element={<Home />} />
             <Route path="/marinas" element={<Marinas />} />
@@ -32,9 +32,6 @@ export default function App() {
             {/* Protected Routes */}
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
-
-          {/* Layout dışında sayfa istersen */}
-          <Route path="/under-construction" element={<UnderConstruction />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
