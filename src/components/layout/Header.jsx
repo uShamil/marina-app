@@ -1,11 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/pelra_logo.png";
+import { useAuth } from "../../hooks/useAuth";
+import { supabase } from "../../lib/supabase";
 
 const HEADER_HEIGHT = 80;
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled] = useState(false);
+  const { user } = useAuth();
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+  };
 
   return (
     <>
@@ -30,8 +37,32 @@ export default function Header() {
           </nav>
 
           {/* Right */}
-          <div className="flex gap-4 text-sm text-gray-700">
-            <span>Log in</span>
+          <div className="flex items-center gap-4 text-sm text-gray-700">
+            {user ? (
+              <>
+                <Link to="/dashboard" className="hidden sm:inline text-gray-700 hover:text-blue-600 font-medium">
+                  {user.user_metadata?.full_name || user.email}
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="font-medium text-red-600 hover:text-red-500"
+                >
+                  Log out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="font-medium hover:text-blue-600">
+                  Log in
+                </Link>
+                <Link
+                  to="/register"
+                  className="px-3 py-1.5 bg-[#5FA8A5] text-white rounded-md hover:bg-[#4d8f8d] transition"
+                >
+                  Sign up
+                </Link>
+              </>
+            )}
             <span>Help</span>
             <span>🌐 AR</span>
           </div>

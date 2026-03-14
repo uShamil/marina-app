@@ -1,15 +1,17 @@
-
+import React from "react";
 import SearchBar from "./SearchBar";
-import bannerImg from "../../assets/b1.jpg";
+
 export default function Hero() {
+  // A beautiful luxury yacht image
+  const bannerImg = "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1920&q=80";
+
   return (
     <section className="relative h-[820px] w-full overflow-hidden">
       {/* Background */}
-
       <img src={bannerImg} className="absolute inset-0 w-full h-full object-cover object-center" />
 
       {/* Soft overlay */}
-      <div className="absolute inset-0 bg-white/10" />
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Header */}
      

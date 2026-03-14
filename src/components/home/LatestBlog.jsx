@@ -6,27 +6,27 @@ import "swiper/css/pagination";
 const blogs = [
   {
     id: 1,
-    title: "The Amazing Difference a Year of Travelling",
-    date: "July 27, 2021",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    title: "10 Tips for Your First Yacht Charter Experience",
+    date: "August 12, 2023",
+    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 2,
-    title: "Travel far enough, you meet yourself.",
-    date: "July 27, 2021",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    title: "Top 5 Marinas to Visit in the Mediterranean",
+    date: "September 05, 2023",
+    image: "https://images.unsplash.com/photo-1540946485063-a40da2fa8448?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 3,
-    title: "How to Save Money While Visiting Africa",
-    date: "July 27, 2021",
-    image: "https://images.unsplash.com/photo-1491553895911-0055eca6402d",
+    title: "Understanding Boat Sizes: Which Catamaran is Right For You?",
+    date: "October 20, 2023",
+    image: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 4,
-    title: "Reflections on 5 Months of Travel: Time to Hang",
-    date: "July 27, 2021",
-    image: "https://images.unsplash.com/photo-1506976785307-8732e854ad89",
+    title: "Essential Gear Every Skipper Should Have on Board",
+    date: "November 14, 2023",
+    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
   },
 ];
 

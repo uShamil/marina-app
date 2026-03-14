@@ -119,7 +119,8 @@ export default function MarinaDetail() {
       } else {
         setBookingSuccess("Booking request sent 🚀");
       }
-    } catch (e) {
+    } catch (err) {
+      console.error(err);
       setBookingError("Unexpected error while creating booking.");
     } finally {
       setBookingSubmitting(false);

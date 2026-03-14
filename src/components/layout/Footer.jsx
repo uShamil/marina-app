@@ -1,13 +1,17 @@
-import footerBg from "../../assets/footer_bg.jpg"; 
-
 export default function Footer() {
+  // A dark ocean/marina image
+  const footerBg = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80";
+
   return (
-    <footer className="relative text-white min-h-[600px]">
-      {/* Background image */}0
-      <div className="absolute inset-0">
-        <img src={footerBg} alt="footer background" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#2f7f7b]/50" />
-      </div>
+    <footer className="relative mt-20 pt-[100px] pb-[60px] text-white">
+      {/* Background Image */}
+      <img
+        src={footerBg}
+        alt="Footer Background"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/80 z-0"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-12">
